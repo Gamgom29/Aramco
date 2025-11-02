@@ -35,9 +35,9 @@ export default function Home() {
   const browse = useTranslations('browse');
 
   const heroImages = [
-    '/image/hero.jpg',
-    '/image/hero2.jpg',
-    '/image/hero3.jpg',
+    '/image/HERO.jpg',
+    '/image/Hero2.jpg',
+    '/image/Hero3.jpg',
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
