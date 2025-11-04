@@ -1,228 +1,102 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card';
-import { Search, Loader2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-const MOCK_POSTS = Array.from({ length: 15 }).map((_, i) => {
-  let img = '/image/blog/1.jpg';
-  if (i >= 8 && i < 12) img = '/image/blog/2.jpg';
-  else if (i >= 12) img = '/image/blog/3.jpg';
-
-  return {
-    id: i + 1,
-    title: `Sustainability in Manufacturing: From Waste to Resource #${i + 1}`,
+const blogs = [
+  {
+    slug: 'fiberglass-vs-carbon',
+    title:
+      'Fiberglass vs Carbon Fiber Reinforced Plastic: Which One Should You Use and Why?',
     excerpt:
-      'Quick practical guide to select the right polymer for packaging, piping or custom molded parts.',
-    image: img,
-    date: new Date(Date.now() - i * 86400000).toISOString(),
-    author: i % 2 === 0 ? 'Aramco Engineering' : 'Aramco Insights',
-    category: ['Manufacturing', 'Sustainability', 'Design'][i % 3],
-    readTime: 3 + (i % 5),
-  };
-});
+      'Are you struggling to choose between fiberglass and carbon fiber for your next project? With so many differences in strength, weight, cost, and performance, making the right decision can feel overwhelming—especially when precision matters. This article breaks down everything you need to know about GFRP and CFRP ',
+    image: '/image/blog/fiber/1.jpg',
+    date: 'October 28, 2025',
+  },
+  {
+    slug: 'frp-vs-fiberglass',
+    title: 'FRP vs Fiberglass: Are They the Same?',
+    excerpt:
+      'Fiberglass is a type of FRP (fiber-reinforced polymer) using glass fibers, offering affordability and versatility for general applications like construction and marine projects. FRP encompasses a broader range of fibers (e.g., carbon, aramid) for specialized, high-performance needs. Choose based on budget, strength, and environmental conditions.',
+    image: '/image/blog/frpvs/1.jpg',
+    date: 'September 19, 2025',
+  },
+  {
+    slug: 'glass-fiber',
+    title: 'Glass Fiber Reinforced Plastic: Sustainable Industry Solutions',
+    excerpt:
+      'Struggling to find materials that are both strong and sustainable? Glass Fiber Reinforced Plastic (GFRP plastic) delivers high-performance durability without the environmental burden of traditional materials.',
+    image: '/image/blog/blog3/1.jpg',
+    date: 'August 10, 2025',
+  },
+  {
+    slug: 'pet-masterbatch',
+    title:
+      'PET Masterbatch: High-Performance Additives for Polyethylene Terephthalate Processing',
+    excerpt:
+      'Ever wondered why your favorite soda bottle stays crystal clear and sturdy? It’s thanks to clever innovations like PET masterbatch. The global polyethylene terephthalate market is booming. It hit about $47 billion in 2024. And it’s set to reach over $52 billion in 2025. That’s massive growth, driven by demand in packaging, textiles, and more.',
+    image: '/image/blog/blog4/1.jpg',
+    date: 'July 1, 2025',
+  },
+];
 
-export default function BlogPage() {
-  const [query, setQuery] = useState('');
-  const [category, setCategory] = useState<string | null>(null);
-  const [posts, setPosts] = useState<typeof MOCK_POSTS>([]);
-  const [loading, setLoading] = useState(true);
-  const [visibleCount, setVisibleCount] = useState(6);
-
-  useEffect(() => {
-    setLoading(true);
-    const t = setTimeout(() => {
-      setPosts(MOCK_POSTS);
-      setLoading(false);
-    }, 600);
-    return () => clearTimeout(t);
-  }, []);
-
-  const categories = useMemo(() => {
-    const set = new Set(posts.map((p) => p.category));
-    return Array.from(set);
-  }, [posts]);
-
-  const filtered = useMemo(() => {
-    return posts
-      .filter((p) => (category ? p.category === category : true))
-      .filter((p) =>
-        query.trim() === ''
-          ? true
-          : `${p.title} ${p.excerpt} ${p.author}`
-              .toLowerCase()
-              .includes(query.toLowerCase())
-      );
-  }, [posts, category, query]);
-
-  const visible = filtered.slice(0, visibleCount);
-
-  function loadMore() {
-    setVisibleCount((v) => v + 6);
-  }
-
+export default function BlogsPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-12">
-      <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold">Aramco Blog</h1>
-          <p className="text-muted-foreground mt-1 max-w-xl">
-            Insights, guides and updates from Aramco — innovations in plastic
-            manufacturing, sustainability and product design.
-          </p>
-        </div>
-
-        <div className="flex w-full max-w-2xl items-center gap-3">
-          <div className="relative flex-1">
-            <Input
-              aria-label="Search posts"
-              placeholder="Search articles, authors, topics..."
-              value={query}
-              onChange={(e: any) => setQuery(e.target.value)}
-              className="pr-10"
-            />
-            <div className="absolute right-2 top-1/2 -translate-y-1/2">
-              {loading ? (
-                <Loader2 className="h-5 w-5 animate-spin" />
-              ) : (
-                <Search className="h-5 w-5" />
-              )}
-            </div>
-          </div>
-
-          <div className="hidden md:flex gap-2">
-            <Button
-              variant="ghost"
-              onClick={() => {
-                setQuery('');
-                setCategory(null);
-              }}
-            >
-              Clear
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      <div className="mb-6 flex flex-wrap gap-3">
-        <button
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-            category === null
-              ? 'bg-primary text-white'
-              : 'bg-muted/40 text-muted-foreground'
-          }`}
-          onClick={() => setCategory(null)}
+    <section className="min-h-screen py-20 bg-white dark:bg-black containerr">
+      <div className="container mx-auto px-4">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
         >
-          All
-        </button>
-        {categories.map((c) => (
-          <button
-            key={c}
-            onClick={() => setCategory((prev) => (prev === c ? null : c))}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-              category === c
-                ? 'bg-primary text-white'
-                : 'bg-muted/30 text-muted-foreground'
-            }`}
-          >
-            {c}
-          </button>
-        ))}
+          Latest Articles from{' '}
+          <span className="text-red-600 dark:text-red-500">
+            Aramco Plastic Industries
+          </span>
+        </motion.h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {blogs.map((blog, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col rounded-3xl overflow-hidden shadow-lg bg-gray-100 dark:bg-black hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div className="relative w-full h-56">
+                <Image
+                  src={blog.image}
+                  alt={blog.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h2 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                  {blog.title}
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                  {blog.excerpt}
+                </p>
+                <div className="flex items-center justify-between mt-auto">
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                    {blog.date}
+                  </span>
+                  <Link
+                    href={`/blog/${blog.slug}`}
+                    className="inline-block bg-red-600 dark:bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-medium"
+                  >
+                    Read More
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
-
-      <AnimatePresence>
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-60 w-full animate-pulse rounded-lg bg-muted/30"
-              />
-            ))}
-          </div>
-        ) : (
-          <motion.div
-            layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {visible.map((post) => (
-              <motion.article
-                key={post.id}
-                layout
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 8 }}
-              >
-                <Card className="h-full hover:shadow-xl transition-transform duration-300 hover:-translate-y-1">
-                  <div className="relative h-44 w-full overflow-hidden rounded-t-lg">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                  </div>
-                  <CardContent>
-                    <CardHeader className="p-0">
-                      <CardTitle className="line-clamp-2 text-lg font-semibold">
-                        {post.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardDescription className="text-sm text-muted-foreground">
-                      {post.excerpt}
-                    </CardDescription>
-
-                    <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
-                      <div>{new Date(post.date).toLocaleDateString()}</div>
-                      <div>{post.readTime} min read</div>
-                    </div>
-
-                    <div className="mt-4 flex items-center justify-between">
-                      <Link
-                        href={`/blog/blogOne`}
-                        className="text-primary font-medium"
-                      >
-                        Read more →
-                      </Link>
-                      <div className="text-sm text-muted-foreground">
-                        {post.author}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.article>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {!loading && visibleCount < filtered.length && (
-        <div className="mt-8 flex justify-center">
-          <Button onClick={loadMore} className="px-8 py-3">
-            Load more
-          </Button>
-        </div>
-      )}
-
-      {!loading && filtered.length === 0 && (
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold">No articles found</h3>
-          <p className="text-muted-foreground mt-2">
-            Try a different search term or check back later.
-          </p>
-        </div>
-      )}
-    </div>
+    </section>
   );
 }
