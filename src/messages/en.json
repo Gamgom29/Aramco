@@ -377,5 +377,312 @@
     "colorDisF":" Color masterbatch is a plastic compound used to impart vibrant, accurate, and consistent coloration to plastic products. It is made by blending high-quality pigments with a base resin and special additives.",
     "Custom":"Custom Masterbatch",
     "customDis":" Custom masterbatch is a tailor-made formulation developed to meet your exact product requirements — whether it's color, performance, or special functionality. At Aramco."
+  },
+  "filler_page": {
+    "hero": {
+      "title": "Filler Masterbatch",
+      "description": "Filler masterbatch is widely used in the production of plastic products. It consists of a blend of calcium carbonate (CaCO₃), plastic resin pellets, and specialized additives tailored to meet customer requirements."
+    },
+    "certifications": {
+      "ISO9001": "ISO 9001 Certified",
+      "Quality": "Quality Assured",
+      "Industry": "Industry Standard",
+      "Innovation": "Innovation Leader"
+    },
+    "advantages": {
+      "title": "Advantages of Aramco Filler Masterbatch",
+      "description": "Our filler masterbatch offers several key benefits that transform your production efficiency and product quality",
+      "list": [
+        {
+          "title": "Cost Reduction",
+          "description": "Lowers raw material consumption, thus reducing production costs significantly"
+        },
+        {
+          "title": "Enhanced Product Properties",
+          "description": "Improves hardness, impact resistance, and product stability"
+        },
+        {
+          "title": "Processing Efficiency",
+          "description": "Stabilizes production processes and enhances surface quality"
+        },
+        {
+          "title": "Energy Savings",
+          "description": "High thermal conductivity of calcium carbonate reduces energy consumption"
+        }
+      ]
+    },
+    "products_title": "Types of Filler Masterbatch",
+    "products_description": "Comprehensive range of filler masterbatch solutions designed to meet diverse manufacturing requirements",
+    "applications_title": "Wide Range of Applications",
+    "applications_description": "Aramco's filler masterbatch is widely applied in various manufacturing processes",
+    "applications_list": [
+      "Blow Molding",
+      "Injection Molding",
+      "Packaging",
+      "Plastic Frames",
+      "Doors",
+      "Plastic Pipes"
+    ],
+    "why_title": "Why Choose Aramco?",
+    "why_description": "Leading provider of innovative filler masterbatch solutions",
+    "why_items": [
+      {
+        "title": "Innovation Excellence",
+        "description": "High-quality solutions engineered with cutting-edge technology and innovative formulations"
+      },
+      {
+        "title": "Customer Focus",
+        "description": "Specialized additives tailored to meet diverse customer needs and specific requirements"
+      },
+      {
+        "title": "Cost Efficiency",
+        "description": "Ensuring cost efficiency and production excellence throughout your manufacturing process"
+      }
+    ]
+  },
+  "colorMasterbatch": {
+    "hero": {
+      "title": "Color",
+      "titleHighlight": "Masterbatch",
+      "description": "Premium plastic compound engineered to deliver vibrant, accurate, and consistent coloration to your plastic products. Made by blending high-quality pigments with base resin and special additives for superior performance.",
+      "badges": {
+        "vibrant": "Vibrant Colors",
+        "consistent": "Consistent Quality",
+        "premium": "Premium Grade"
+      }
+    },
+    "whatIs": {
+      "title": "What is Color Masterbatch?",
+      "description": "Color masterbatch is a plastic compound used to impart vibrant, accurate, and consistent coloration to plastic products. It is made by blending high-quality pigments with a base resin and special additives, then pelletized for use in various manufacturing processes."
+    },
+    "features": {
+      "title": "Key Features of Aramco Color Masterbatch",
+      "subtitle": "Engineered with advanced technology to deliver exceptional performance in every application",
+      "items": {
+        "dispersion": {
+          "title": "Excellent Pigment Dispersion",
+          "description": "Ensures uniform color distribution and consistency across the final product surface."
+        },
+        "fastness": {
+          "title": "High Color Fastness",
+          "description": "Maintains color integrity under harsh processing conditions and long-term usage."
+        },
+        "thermal": {
+          "title": "Thermal Resistance",
+          "description": "Performs reliably at high processing temperatures without degradation or color shift."
+        },
+        "dust": {
+          "title": "Reduced Dust and Contamination",
+          "description": "Minimizes airborne particles and workplace pollution compared to traditional powdered pigments."
+        },
+        "efficiency": {
+          "title": "Enhanced Production Efficiency",
+          "description": "Improves workflow by making handling easier, reducing waste, and cutting overall production costs."
+        }
+      }
+    },
+    "colors": {
+      "title": "Available Colors",
+      "subtitle": "Comprehensive color palette to meet all your design requirements",
+      "standard": "Standard Colors",
+      "names": {
+        "white": "White",
+        "black": "Black",
+        "red": "Red",
+        "blue": "Blue",
+        "gray": "Gray",
+        "orange": "Orange",
+        "purple": "Purple",
+        "brown": "Brown",
+        "yellow": "Yellow"
+      },
+      "custom": {
+        "title": "Custom Solutions",
+        "description": "Tailored color masterbatch with special visual effects based on your product's design requirements. We work closely with you to create unique colors that perfectly match your brand identity and product specifications.",
+        "button": "Request Custom Color"
+      }
+    },
+    "applications": {
+      "title": "Applications",
+      "subtitle": "Ideal for a wide range of plastic processing applications",
+      "items": {
+        "film": "Plastic Film Production",
+        "molding": "Injection Molding",
+        "extrusion": "Extrusion Processes",
+        "industrial": "Industrial Applications"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose Aramco?",
+      "subtitle": "As a trusted partner in the plastics industry, Aramco delivers comprehensive solutions that drive success",
+      "items": {
+        "performance": {
+          "title": "High-Performance Solutions",
+          "description": "Delivering exceptional quality that enhances your product excellence"
+        },
+        "efficiency": {
+          "title": "Production Efficiency",
+          "description": "Streamlined processes that improve workflow and reduce costs"
+        },
+        "sustainability": {
+          "title": "Environmental Sustainability",
+          "description": "Committed to eco-friendly practices and sustainable solutions"
+        },
+        "satisfaction": {
+          "title": "Customer Satisfaction",
+          "description": "Strong focus on meeting and exceeding customer expectations"
+        }
+      },
+      "summary": {
+        "text": "Aramco's color masterbatch solutions enhance",
+        "quality": "product quality",
+        "improve": ", improve",
+        "productionEfficiency": "production efficiency",
+        "support": ", and support",
+        "environmental": "environmental sustainability",
+        "allWith": "— all with a strong focus on",
+        "customer": "customer satisfaction",
+        "end": "."
+      }
+    }
+  },
+  "customMasterbatch": {
+    "hero": {
+      "title": "Custom",
+      "titleHighlight": "Masterbatch",
+      "titleEnd": "Solutions",
+      "description": "Tailor-made formulations developed to meet your exact product requirements — whether it's color, performance, or special functionality. We don't just sell products — we collaborate with you to design precise, effective, and application-specific solutions.",
+      "badges": {
+        "precision": "Precision Engineered",
+        "unlimited": "Unlimited Possibilities",
+        "support": "Full Support"
+      }
+    },
+    "whatIs": {
+      "title": "What is Custom Masterbatch?",
+      "description": "Custom masterbatch is a tailor-made formulation developed to meet your exact product requirements — whether it's color, performance, or special functionality.",
+      "highlight": "At Aramco, we don't just sell products — we collaborate with you to design precise, effective, and application-specific masterbatch solutions."
+    },
+    "features": {
+      "title": "Key Features of Aramco's Custom Masterbatch",
+      "subtitle": "Comprehensive capabilities designed to bring your vision to life",
+      "items": {
+        "formulations": {
+          "title": "Fully Customized Formulations",
+          "description": "We create masterbatch from scratch to meet your technical and aesthetic needs."
+        },
+        "colors": {
+          "title": "Unlimited Color Options",
+          "description": "Accurate color matching based on RAL, Pantone, or actual customer samples."
+        },
+        "functionalities": {
+          "title": "Added Functionalities",
+          "description": "Integrate features like UV resistance, flame retardants, antioxidants, and more."
+        },
+        "testing": {
+          "title": "Advanced Laboratory Testing",
+          "description": "Each formulation is thoroughly tested to ensure full compatibility with your base resin and processing conditions."
+        },
+        "support": {
+          "title": "Technical Support at Every Step",
+          "description": "Our experts work closely with your production team to ensure seamless performance and implementation."
+        }
+      },
+      "functional": {
+        "title": "Available Functional Additions",
+        "items": {
+          "uv": "UV Resistance",
+          "flame": "Flame Retardants",
+          "antioxidants": "Antioxidants",
+          "effects": "Special Effects"
+        }
+      }
+    },
+    "process": {
+      "title": "Our Collaboration Process",
+      "subtitle": "From concept to production, we're with you every step of the way",
+      "steps": {
+        "consultation": {
+          "title": "Consultation",
+          "description": "We discuss your requirements, application, and performance goals."
+        },
+        "formulation": {
+          "title": "Formulation",
+          "description": "Our team develops a custom formula matching your exact specifications."
+        },
+        "testing": {
+          "title": "Testing",
+          "description": "Rigorous laboratory testing ensures compatibility and performance."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "Full technical support during production and ongoing optimization."
+        }
+      }
+    },
+    "applications": {
+      "title": "Applications",
+      "subtitle": "Custom masterbatch is ideal for high-spec or niche applications",
+      "items": {
+        "packaging": {
+          "title": "Advanced Packaging",
+          "description": "High-performance solutions for premium packaging that demands exceptional quality and visual appeal."
+        },
+        "household": {
+          "title": "Premium Household Goods",
+          "description": "Custom formulations for consumer products requiring superior aesthetics and durability."
+        },
+        "automotive": {
+          "title": "Automotive Components",
+          "description": "Specialized masterbatch for automotive parts with strict performance and safety requirements."
+        },
+        "electrical": {
+          "title": "Electrical Parts",
+          "description": "Technical solutions for electrical components requiring specific functional properties."
+        },
+        "medical": {
+          "title": "Medical-Grade Products",
+          "description": "Certified formulations meeting stringent medical and healthcare industry standards."
+        },
+        "unique": {
+          "title": "Unique Projects",
+          "description": "Any project requiring unique color or performance characteristics tailored to your needs."
+        }
+      }
+    },
+    "whyAramco": {
+      "title": "Why Aramco?",
+      "subtitle": "Because we don't just deliver materials — we deliver tailored solutions and strategic partnerships",
+      "items": {
+        "tailored": {
+          "title": "Tailored Solutions",
+          "description": "Every formulation is designed specifically for your unique requirements"
+        },
+        "quality": {
+          "title": "High-Quality Standards",
+          "description": "Rigorous testing and quality control ensure consistent excellence"
+        },
+        "partnership": {
+          "title": "Strategic Partnership",
+          "description": "We work as an extension of your team, committed to your success"
+        },
+        "support": {
+          "title": "Full Technical Support",
+          "description": "Expert guidance from formulation through production and beyond"
+        }
+      },
+      "summary": {
+        "title": "With Aramco, you get:",
+        "badges": {
+          "formulations": "High-Quality Custom Formulations",
+          "support": "Full Technical Support",
+          "team": "Dedicated Team",
+          "commitment": "Commitment to Your Success"
+        }
+      }
+    }
   }
 }
+
+
+

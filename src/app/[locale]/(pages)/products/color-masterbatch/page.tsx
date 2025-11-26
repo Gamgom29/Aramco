@@ -25,87 +25,84 @@ import {
   Box,
   Factory,
 } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
 import CTAbout from '@/app/[locale]/components/CTAAbout/CTAbout';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 
 const ColorMasterbatchPage: React.FC = () => {
+  const t = useTranslations('colorMasterbatch');
+
   const features = [
     {
       icon: Sparkles,
-      title: 'Excellent Pigment Dispersion',
-      description:
-        'Ensures uniform color distribution and consistency across the final product surface.',
+      title: t('features.items.dispersion.title'),
+      description: t('features.items.dispersion.description'),
     },
     {
       icon: Shield,
-      title: 'High Color Fastness',
-      description:
-        'Maintains color integrity under harsh processing conditions and long-term usage.',
+      title: t('features.items.fastness.title'),
+      description: t('features.items.fastness.description'),
     },
     {
       icon: Thermometer,
-      title: 'Thermal Resistance',
-      description:
-        'Performs reliably at high processing temperatures without degradation or color shift.',
+      title: t('features.items.thermal.title'),
+      description: t('features.items.thermal.description'),
     },
     {
       icon: Wind,
-      title: 'Reduced Dust and Contamination',
-      description:
-        'Minimizes airborne particles and workplace pollution compared to traditional powdered pigments.',
+      title: t('features.items.dust.title'),
+      description: t('features.items.dust.description'),
     },
     {
       icon: TrendingUp,
-      title: 'Enhanced Production Efficiency',
-      description:
-        'Improves workflow by making handling easier, reducing waste, and cutting overall production costs.',
+      title: t('features.items.efficiency.title'),
+      description: t('features.items.efficiency.description'),
     },
   ];
 
   const applications = [
-    { name: 'Plastic Film Production', icon: Film },
-    { name: 'Injection Molding', icon: Box },
-    { name: 'Extrusion Processes', icon: Layers },
-    { name: 'Industrial Applications', icon: Factory },
+    { name: t('applications.items.film'), icon: Film },
+    { name: t('applications.items.molding'), icon: Box },
+    { name: t('applications.items.extrusion'), icon: Layers },
+    { name: t('applications.items.industrial'), icon: Factory },
   ];
 
   const standardColors = [
-    { name: 'White', color: 'bg-white border-2 border-gray-300' },
-    { name: 'Black', color: 'bg-black' },
-    { name: 'Red', color: 'bg-red-500' },
-    { name: 'Blue', color: 'bg-blue-500' },
-    { name: 'Gray', color: 'bg-gray-500' },
-    { name: 'Orange', color: 'bg-orange-500' },
-    { name: 'Purple', color: 'bg-purple-500' },
-    { name: 'Brown', color: 'bg-amber-700' },
-    { name: 'Yellow', color: 'bg-yellow-400' },
+    {
+      name: t('colors.names.white'),
+      color: 'bg-white border-2 border-gray-300',
+    },
+    { name: t('colors.names.black'), color: 'bg-black' },
+    { name: t('colors.names.red'), color: 'bg-red-500' },
+    { name: t('colors.names.blue'), color: 'bg-blue-500' },
+    { name: t('colors.names.gray'), color: 'bg-gray-500' },
+    { name: t('colors.names.orange'), color: 'bg-orange-500' },
+    { name: t('colors.names.purple'), color: 'bg-purple-500' },
+    { name: t('colors.names.brown'), color: 'bg-amber-700' },
+    { name: t('colors.names.yellow'), color: 'bg-yellow-400' },
   ];
 
   const whyChoose = [
     {
       icon: Award,
-      title: 'High-Performance Solutions',
-      description:
-        'Delivering exceptional quality that enhances your product excellence',
+      title: t('whyChoose.items.performance.title'),
+      description: t('whyChoose.items.performance.description'),
     },
     {
       icon: TrendingUp,
-      title: 'Production Efficiency',
-      description:
-        'Streamlined processes that improve workflow and reduce costs',
+      title: t('whyChoose.items.efficiency.title'),
+      description: t('whyChoose.items.efficiency.description'),
     },
     {
       icon: Leaf,
-      title: 'Environmental Sustainability',
-      description:
-        'Committed to eco-friendly practices and sustainable solutions',
+      title: t('whyChoose.items.sustainability.title'),
+      description: t('whyChoose.items.sustainability.description'),
     },
     {
       icon: Users,
-      title: 'Customer Satisfaction',
-      description:
-        'Strong focus on meeting and exceeding customer expectations',
+      title: t('whyChoose.items.satisfaction.title'),
+      description: t('whyChoose.items.satisfaction.description'),
     },
   ];
 
@@ -134,14 +131,12 @@ const ColorMasterbatchPage: React.FC = () => {
             <div className="flex items-center justify-center mb-6">
               <Palette className="h-12 w-12 text-primary mr-4" />
               <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Color <span className="text-primary">Masterbatch</span>
+                {t('hero.title')}{' '}
+                <span className="text-primary">{t('hero.titleHighlight')}</span>
               </h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Premium plastic compound engineered to deliver vibrant, accurate,
-              and consistent coloration to your plastic products. Made by
-              blending high-quality pigments with base resin and special
-              additives for superior performance.
+              {t('hero.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div
@@ -151,7 +146,9 @@ const ColorMasterbatchPage: React.FC = () => {
                 className="flex items-center space-x-2 bg-background/80 backdrop-blur rounded-lg px-4 py-2 border"
               >
                 <Sparkles className="h-6 w-6 text-primary" />
-                <span className="text-sm font-medium">Vibrant Colors</span>
+                <span className="text-sm font-medium">
+                  {t('hero.badges.vibrant')}
+                </span>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -160,7 +157,9 @@ const ColorMasterbatchPage: React.FC = () => {
                 className="flex items-center space-x-2 bg-background/80 backdrop-blur rounded-lg px-4 py-2 border"
               >
                 <CheckCircle className="h-6 w-6 text-primary" />
-                <span className="text-sm font-medium">Consistent Quality</span>
+                <span className="text-sm font-medium">
+                  {t('hero.badges.consistent')}
+                </span>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -169,7 +168,9 @@ const ColorMasterbatchPage: React.FC = () => {
                 className="flex items-center space-x-2 bg-background/80 backdrop-blur rounded-lg px-4 py-2 border"
               >
                 <Award className="h-6 w-6 text-primary" />
-                <span className="text-sm font-medium">Premium Grade</span>
+                <span className="text-sm font-medium">
+                  {t('hero.badges.premium')}
+                </span>
               </motion.div>
             </div>
           </motion.div>
@@ -187,7 +188,7 @@ const ColorMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                What is Color Masterbatch?
+                {t('whatIs.title')}
               </h2>
             </div>
             <Card className="p-8 lg:p-12">
@@ -197,11 +198,7 @@ const ColorMasterbatchPage: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Color masterbatch is a plastic compound used to impart
-                    vibrant, accurate, and consistent coloration to plastic
-                    products. It is made by blending high-quality pigments with
-                    a base resin and special additives, then pelletized for use
-                    in various manufacturing processes.
+                    {t('whatIs.description')}
                   </p>
                 </div>
               </div>
@@ -220,11 +217,10 @@ const ColorMasterbatchPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Key Features of Aramco Color Masterbatch
+              {t('features.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Engineered with advanced technology to deliver exceptional
-              performance in every application
+              {t('features.subtitle')}
             </p>
           </motion.div>
 
@@ -266,17 +262,17 @@ const ColorMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Available Colors
+                {t('colors.title')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Comprehensive color palette to meet all your design requirements
+                {t('colors.subtitle')}
               </p>
             </div>
 
             {/* Standard Colors */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-                Standard Colors
+                {t('colors.standard')}
               </h3>
               <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-6">
                 {standardColors.map((color, index) => (
@@ -311,15 +307,16 @@ const ColorMasterbatchPage: React.FC = () => {
                   <Sparkles className="h-12 w-12 text-primary flex-shrink-0" />
                   <div>
                     <h3 className="text-2xl font-bold text-foreground mb-3">
-                      Custom Solutions
+                      {t('colors.custom.title')}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Tailored color masterbatch with special visual effects
-                      based on your product's design requirements. We work
-                      closely with you to create unique colors that perfectly
-                      match your brand identity and product specifications.
+                      {t('colors.custom.description')}
                     </p>
-                    <Button className="mt-6">Request Custom Color</Button>
+                    <Link href={'/contact'}>
+                      <Button className="mt-6">
+                        {t('colors.custom.button')}
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </Card>
@@ -339,10 +336,10 @@ const ColorMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Applications
+                {t('applications.title')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Ideal for a wide range of plastic processing applications
+                {t('applications.subtitle')}
               </p>
             </div>
 
@@ -384,11 +381,10 @@ const ColorMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Why Choose Aramco?
+                {t('whyChoose.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                As a trusted partner in the plastics industry, Aramco delivers
-                comprehensive solutions that drive success
+                {t('whyChoose.subtitle')}
               </p>
             </div>
 
@@ -429,23 +425,23 @@ const ColorMasterbatchPage: React.FC = () => {
             >
               <Card className="p-8 bg-gradient-to-br from-primary/10 to-background">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Aramco's color masterbatch solutions enhance{' '}
+                  {t('whyChoose.summary.text')}{' '}
                   <span className="font-semibold text-foreground">
-                    product quality
+                    {t('whyChoose.summary.quality')}
                   </span>
-                  , improve{' '}
+                  {t('whyChoose.summary.improve')}{' '}
                   <span className="font-semibold text-foreground">
-                    production efficiency
+                    {t('whyChoose.summary.productionEfficiency')}
                   </span>
-                  , and support{' '}
+                  {t('whyChoose.summary.support')}{' '}
                   <span className="font-semibold text-foreground">
-                    environmental sustainability
+                    {t('whyChoose.summary.environmental')}
                   </span>{' '}
-                  — all with a strong focus on{' '}
+                  {t('whyChoose.summary.allWith')}{' '}
                   <span className="font-semibold text-foreground">
-                    customer satisfaction
+                    {t('whyChoose.summary.customer')}
                   </span>
-                  .
+                  {t('whyChoose.summary.end')}
                 </p>
               </Card>
             </motion.div>

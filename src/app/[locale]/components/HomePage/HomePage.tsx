@@ -268,7 +268,7 @@ export default function Home() {
                     <Award className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold">15+</p>
+                    <p className="text-2xl font-bold">10+</p>
                     <p className="text-sm text-muted-foreground">
                       Years Experience
                     </p>

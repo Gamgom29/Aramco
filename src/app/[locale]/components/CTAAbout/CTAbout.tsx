@@ -38,7 +38,10 @@ export default function CTAbout() {
               className="px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               asChild
             >
-              <Link href="/products" className="flex items-center space-x-2">
+              <Link
+                href="/products/filler-masterbatch"
+                className="flex items-center space-x-2"
+              >
                 <span>{t('cta.buttons.services')}</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>

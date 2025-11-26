@@ -33,114 +33,118 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import CTAbout from '@/app/[locale]/components/CTAAbout/CTAbout';
+import { useTranslations } from 'next-intl';
 
 const CustomMasterbatchPage: React.FC = () => {
+  const t = useTranslations('customMasterbatch');
+
   const features = [
     {
       icon: Settings,
-      title: 'Fully Customized Formulations',
-      description:
-        'We create masterbatch from scratch to meet your technical and aesthetic needs.',
+      title: t('features.items.formulations.title'),
+      description: t('features.items.formulations.description'),
     },
     {
       icon: Palette,
-      title: 'Unlimited Color Options',
-      description:
-        'Accurate color matching based on RAL, Pantone, or actual customer samples.',
+      title: t('features.items.colors.title'),
+      description: t('features.items.colors.description'),
     },
     {
       icon: Sparkles,
-      title: 'Added Functionalities',
-      description:
-        'Integrate features like UV resistance, flame retardants, antioxidants, and more.',
+      title: t('features.items.functionalities.title'),
+      description: t('features.items.functionalities.description'),
     },
     {
       icon: Microscope,
-      title: 'Advanced Laboratory Testing',
-      description:
-        'Each formulation is thoroughly tested to ensure full compatibility with your base resin and processing conditions.',
+      title: t('features.items.testing.title'),
+      description: t('features.items.testing.description'),
     },
     {
       icon: Users,
-      title: 'Technical Support at Every Step',
-      description:
-        'Our experts work closely with your production team to ensure seamless performance and implementation.',
+      title: t('features.items.support.title'),
+      description: t('features.items.support.description'),
     },
   ];
 
   const functionalAdditions = [
-    { icon: Sun, name: 'UV Resistance', color: 'text-yellow-500' },
-    { icon: Flame, name: 'Flame Retardants', color: 'text-orange-500' },
-    { icon: Shield, name: 'Antioxidants', color: 'text-blue-500' },
-    { icon: Sparkles, name: 'Special Effects', color: 'text-purple-500' },
+    {
+      icon: Sun,
+      name: t('features.functional.items.uv'),
+      color: 'text-yellow-500',
+    },
+    {
+      icon: Flame,
+      name: t('features.functional.items.flame'),
+      color: 'text-orange-500',
+    },
+    {
+      icon: Shield,
+      name: t('features.functional.items.antioxidants'),
+      color: 'text-blue-500',
+    },
+    {
+      icon: Sparkles,
+      name: t('features.functional.items.effects'),
+      color: 'text-purple-500',
+    },
   ];
 
   const applications = [
     {
       icon: Package,
-      title: 'Advanced Packaging',
-      description:
-        'High-performance solutions for premium packaging that demands exceptional quality and visual appeal.',
+      title: t('applications.items.packaging.title'),
+      description: t('applications.items.packaging.description'),
     },
     {
       icon: Home,
-      title: 'Premium Household Goods',
-      description:
-        'Custom formulations for consumer products requiring superior aesthetics and durability.',
+      title: t('applications.items.household.title'),
+      description: t('applications.items.household.description'),
     },
     {
       icon: Car,
-      title: 'Automotive Components',
-      description:
-        'Specialized masterbatch for automotive parts with strict performance and safety requirements.',
+      title: t('applications.items.automotive.title'),
+      description: t('applications.items.automotive.description'),
     },
     {
       icon: Zap,
-      title: 'Electrical Parts',
-      description:
-        'Technical solutions for electrical components requiring specific functional properties.',
+      title: t('applications.items.electrical.title'),
+      description: t('applications.items.electrical.description'),
     },
     {
       icon: Heart,
-      title: 'Medical-Grade Products',
-      description:
-        'Certified formulations meeting stringent medical and healthcare industry standards.',
+      title: t('applications.items.medical.title'),
+      description: t('applications.items.medical.description'),
     },
     {
       icon: Target,
-      title: 'Unique Projects',
-      description:
-        'Any project requiring unique color or performance characteristics tailored to your needs.',
+      title: t('applications.items.unique.title'),
+      description: t('applications.items.unique.description'),
     },
   ];
 
   const processSteps = [
     {
       number: '01',
-      title: 'Consultation',
-      description:
-        'We discuss your requirements, application, and performance goals.',
+      title: t('process.steps.consultation.title'),
+      description: t('process.steps.consultation.description'),
       icon: MessageSquare,
     },
     {
       number: '02',
-      title: 'Formulation',
-      description:
-        'Our team develops a custom formula matching your exact specifications.',
+      title: t('process.steps.formulation.title'),
+      description: t('process.steps.formulation.description'),
       icon: Lightbulb,
     },
     {
       number: '03',
-      title: 'Testing',
-      description:
-        'Rigorous laboratory testing ensures compatibility and performance.',
+      title: t('process.steps.testing.title'),
+      description: t('process.steps.testing.description'),
       icon: Microscope,
     },
     {
       number: '04',
-      title: 'Implementation',
-      description:
-        'Full technical support during production and ongoing optimization.',
+      title: t('process.steps.implementation.title'),
+      description: t('process.steps.implementation.description'),
       icon: Wrench,
     },
   ];
@@ -148,27 +152,23 @@ const CustomMasterbatchPage: React.FC = () => {
   const whyAramco = [
     {
       icon: Target,
-      title: 'Tailored Solutions',
-      description:
-        'Every formulation is designed specifically for your unique requirements',
+      title: t('whyAramco.items.tailored.title'),
+      description: t('whyAramco.items.tailored.description'),
     },
     {
       icon: Award,
-      title: 'High-Quality Standards',
-      description:
-        'Rigorous testing and quality control ensure consistent excellence',
+      title: t('whyAramco.items.quality.title'),
+      description: t('whyAramco.items.quality.description'),
     },
     {
       icon: Users,
-      title: 'Strategic Partnership',
-      description:
-        'We work as an extension of your team, committed to your success',
+      title: t('whyAramco.items.partnership.title'),
+      description: t('whyAramco.items.partnership.description'),
     },
     {
       icon: Wrench,
-      title: 'Full Technical Support',
-      description:
-        'Expert guidance from formulation through production and beyond',
+      title: t('whyAramco.items.support.title'),
+      description: t('whyAramco.items.support.description'),
     },
   ];
 
@@ -197,16 +197,13 @@ const CustomMasterbatchPage: React.FC = () => {
             <div className="flex items-center justify-center mb-6">
               <Settings className="h-12 w-12 text-primary mr-4" />
               <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                Custom <span className="text-primary">Masterbatch</span>{' '}
-                Solutions
+                {t('hero.title')}{' '}
+                <span className="text-primary">{t('hero.titleHighlight')}</span>{' '}
+                {t('hero.titleEnd')}
               </h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Tailor-made formulations developed to meet your exact product
-              requirements — whether it's color, performance, or special
-              functionality. We don't just sell products — we collaborate with
-              you to design precise, effective, and application-specific
-              solutions.
+              {t('hero.description')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div
@@ -217,7 +214,7 @@ const CustomMasterbatchPage: React.FC = () => {
               >
                 <Target className="h-6 w-6 text-primary" />
                 <span className="text-sm font-medium">
-                  Precision Engineered
+                  {t('hero.badges.precision')}
                 </span>
               </motion.div>
               <motion.div
@@ -228,7 +225,7 @@ const CustomMasterbatchPage: React.FC = () => {
               >
                 <Sparkles className="h-6 w-6 text-primary" />
                 <span className="text-sm font-medium">
-                  Unlimited Possibilities
+                  {t('hero.badges.unlimited')}
                 </span>
               </motion.div>
               <motion.div
@@ -238,7 +235,9 @@ const CustomMasterbatchPage: React.FC = () => {
                 className="flex items-center space-x-2 bg-background/80 backdrop-blur rounded-lg px-4 py-2 border"
               >
                 <Users className="h-6 w-6 text-primary" />
-                <span className="text-sm font-medium">Full Support</span>
+                <span className="text-sm font-medium">
+                  {t('hero.badges.support')}
+                </span>
               </motion.div>
             </div>
           </motion.div>
@@ -256,7 +255,7 @@ const CustomMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                What is Custom Masterbatch?
+                {t('whatIs.title')}
               </h2>
             </div>
             <Card className="p-8 lg:p-12 bg-gradient-to-br from-primary/5 to-background border-primary/20">
@@ -266,14 +265,10 @@ const CustomMasterbatchPage: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    Custom masterbatch is a tailor-made formulation developed to
-                    meet your exact product requirements — whether it's color,
-                    performance, or special functionality.
+                    {t('whatIs.description')}
                   </p>
                   <p className="text-lg font-semibold text-foreground">
-                    At Aramco, we don't just sell products — we collaborate with
-                    you to design precise, effective, and application-specific
-                    masterbatch solutions.
+                    {t('whatIs.highlight')}
                   </p>
                 </div>
               </div>
@@ -292,10 +287,10 @@ const CustomMasterbatchPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Key Features of Aramco's Custom Masterbatch
+              {t('features.title')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive capabilities designed to bring your vision to life
+              {t('features.subtitle')}
             </p>
           </motion.div>
 
@@ -333,7 +328,7 @@ const CustomMasterbatchPage: React.FC = () => {
           >
             <Card className="p-8 bg-gradient-to-br from-primary/5 to-background">
               <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Available Functional Additions
+                {t('features.functional.title')}
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {functionalAdditions.map((item, index) => {
@@ -371,10 +366,10 @@ const CustomMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Collaboration Process
+                {t('process.title')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                From concept to production, we're with you every step of the way
+                {t('process.subtitle')}
               </p>
             </div>
 
@@ -420,10 +415,10 @@ const CustomMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Applications
+                {t('applications.title')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Custom masterbatch is ideal for high-spec or niche applications
+                {t('applications.subtitle')}
               </p>
             </div>
 
@@ -466,11 +461,10 @@ const CustomMasterbatchPage: React.FC = () => {
           >
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Why Aramco?
+                {t('whyAramco.title')}
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Because we don't just deliver materials — we deliver tailored
-                solutions and strategic partnerships
+                {t('whyAramco.subtitle')}
               </p>
             </div>
 
@@ -512,20 +506,20 @@ const CustomMasterbatchPage: React.FC = () => {
                 <div className="text-center">
                   <CheckCircle className="h-16 w-16 text-primary mx-auto mb-6" />
                   <p className="text-xl text-foreground font-semibold mb-4">
-                    With Aramco, you get:
+                    {t('whyAramco.summary.title')}
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <Badge variant="secondary" className="text-sm px-4 py-2">
-                      High-Quality Custom Formulations
+                      {t('whyAramco.summary.badges.formulations')}
                     </Badge>
                     <Badge variant="secondary" className="text-sm px-4 py-2">
-                      Full Technical Support
+                      {t('whyAramco.summary.badges.support')}
                     </Badge>
                     <Badge variant="secondary" className="text-sm px-4 py-2">
-                      Dedicated Team
+                      {t('whyAramco.summary.badges.team')}
                     </Badge>
                     <Badge variant="secondary" className="text-sm px-4 py-2">
-                      Commitment to Your Success
+                      {t('whyAramco.summary.badges.commitment')}
                     </Badge>
                   </div>
                 </div>
