@@ -25,6 +25,7 @@ import {
   Handshake,
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+import CTAbout from '../../components/CTAAbout/CTAbout';
 
 export default function AboutPage() {
   const t = useTranslations('About');
@@ -512,7 +513,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative py-24 overflow-hidden">
+      {/* <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary-foreground/20" />
         <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
 
@@ -554,7 +555,9 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+
+      <CTAbout />
     </div>
   );
 }
