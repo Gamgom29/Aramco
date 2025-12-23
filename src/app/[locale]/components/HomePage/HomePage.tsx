@@ -34,6 +34,7 @@ export default function Home() {
   const t = useTranslations('Home');
   const cta = useTranslations('CTA');
   const browse = useTranslations('browse');
+  const tt = useTranslations('Navbar');
 
   const heroImages = [
     '/image/HERO.jpg',
@@ -119,8 +120,9 @@ export default function Home() {
                 className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white hover:text-foreground transition-all duration-300"
                 asChild
               >
-                <Link href="/services" className="flex items-center space-x-2">
-                  <span>{t('hero.buttons.services')}</span>
+                <Link href="/about" className="flex items-center space-x-2">
+                  <span>{tt('about')}</span>
+
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
