@@ -23,7 +23,7 @@ function url(base: string, locale: Locale, path: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.aramcofortrading.com";
     const now = new Date();
 
     // كل صفحة “canonical” هنعملها entry واحد ونحط alternates للغتين
